@@ -33,12 +33,17 @@ namespace dotnetapp.Models
                 .HasForeignKey<Assignment>(a => a.ContainerId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            modelBuilder.Entity<Assignment>()
-                .HasMany(a => a.Issues)
-                .WithOne(i => i.Assignment)
+            // modelBuilder.Entity<Assignment>()
+            //     .HasMany(a => a.Issues)
+            //     .WithOne(i => i.Assignment)
+            //     .HasForeignKey(i => i.AssignmentId)
+            //     .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Issue>()
+                .HasOne(i => i.Assignment)
+                .WithMany()
                 .HasForeignKey(i => i.AssignmentId)
                 .OnDelete(DeleteBehavior.Cascade);
-
             // Add other configurations as needed
 
             base.OnModelCreating(modelBuilder);

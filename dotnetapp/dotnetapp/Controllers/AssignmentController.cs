@@ -43,7 +43,6 @@ namespace dotnetapp.Controllers
                 var assignment = await _context.Assignments
                     .Include(a => a.Container)
                     .Include(a => a.User)
-                    .Include(a => a.Issues)
                     .FirstOrDefaultAsync(a => a.AssignmentId == assignmentId);
 
                 if (assignment == null)

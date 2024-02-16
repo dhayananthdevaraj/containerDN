@@ -20,7 +20,6 @@ namespace dotnetapp.Models{
    
     public User? User { get; set; }
 
-    public List<Issue>? Issues { get; set; }
 }
 
 }

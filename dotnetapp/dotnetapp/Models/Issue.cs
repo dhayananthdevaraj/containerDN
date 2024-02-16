@@ -11,8 +11,8 @@ namespace dotnetapp.Models{
 
      public long AssignmentId { get; set; } // Add AssignmentId property
 
-    public User User { get; set; } // Relationship with the User model
-    public Assignment Assignment { get; set; }
+    public User? User { get; set; } 
+    public Assignment? Assignment { get; set; }
 
 }
 
